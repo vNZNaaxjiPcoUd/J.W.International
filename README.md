@@ -1,6 +1,6 @@
-*** We are the computer service company. We support computer setup, consult. Follows are some service of us ***
+***We are the computer service company. We support computer setup, consult. Follows are some service of us***
 
-* Websites, IT & Software
+    Websites, IT & Software
     -----------------------
     
     PHP, HTML, JavaScript, Software Architecture, MySQL...
