@@ -1,0 +1,14 @@
+---
+layout: default
+title: Post
+---
+<h2>J.W.International</h2>
+<br>
+<ul>
+  {% for post in site.posts %}
+    <li>
+      <h3>{{ post.date | date_to_string}} {{ post.title }}</h3>
+      {{ post.content }}
+    </li>
+  {% endfor %}
+</ul>
