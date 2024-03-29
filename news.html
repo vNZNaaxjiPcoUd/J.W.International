@@ -9,7 +9,7 @@ title: News
   {% for p in site.news %}
     <li>
       <p><a href="{{ p.url }}">{{ p.title }}</a></p>
-      {{ post.excerpt }}
+      {{ p.excerpt }}
     </li>
   {% endfor %}
 </ul>
