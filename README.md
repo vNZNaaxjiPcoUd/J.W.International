@@ -14,3 +14,5 @@
 ***If you need any service, you can contact service@jwint.net***
 
 ### 🍀
+
+[News](./news) [Blog](./Post)
