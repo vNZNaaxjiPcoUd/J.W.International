@@ -1,1 +1,1 @@
-Thank your information. If need more, you can connect service@jwint.net 
+Got your information! If need more, you can contact [service@jwint.net](mailto:service@jwint.net?subject=Get_Plan_detail) 
