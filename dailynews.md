@@ -4,5 +4,6 @@
 {% for p in pp %}
 - ### {{ p.date | date: "%a, %b %d, %Y" }}
     {{ p.content }}
+  <br><br>
 {% endfor %}
 
