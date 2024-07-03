@@ -2,8 +2,9 @@
 
 {% assign pp = site.news | sort_natural: "date" | reverse %}
 {% for p in pp %}
-- ### {{ p.date | date: "%a, %b %d, %Y" }}
-    {{ p.content }}
+### {{ p.date | date: "%a, %b %d, %Y" }}
+
+{{ p.content }}
   <br><br>
 {% endfor %}
 
