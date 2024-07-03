@@ -1,7 +1,7 @@
 News
 ====
 {% for p in site.news %}
-- [{{ p.title }})]
+- [{{ p.date }})]
     {{ p.content }}
 {% endfor %}
 
