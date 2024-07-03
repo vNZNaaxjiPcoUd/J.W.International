@@ -1,0 +1,12 @@
+<h2>News</h2>
+{% assign pp = site.news | sort_natural: "date" | reverse %}
+{% for p in pp %}
+<div class="w3-card w3-light-grey ">
+  <H3> {{ p.date | date: "%a, %b %d, %Y" }}</H3>
+  <div class="container-lg px-3 my-5 markdown-body">
+  		{{ p.content }}
+  </div>
+</div>
+<br><br>
+{% endfor %}
+
