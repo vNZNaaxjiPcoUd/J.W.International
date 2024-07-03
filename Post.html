@@ -1,14 +1,7 @@
----
-layout: html
-title: JWINT
----
-<h2>Blog</h2>
-<br>
-<ul>
-  {% for post in site.posts %}
-    <li>
-      <h4>{{ post.date | date_to_string}} {{ post.title }}</h4>
-      {{ post.content }}
-    </li>
-  {% endfor %}
-</ul>
+Blog
+====
+{% for post in site.posts %}
+- [{{ post.date | date_to_string}} {{ post.title }}]
+    {{ post.content }}
+{% endfor %}
+  
