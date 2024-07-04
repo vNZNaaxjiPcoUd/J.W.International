@@ -46,6 +46,17 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
 	<div class="w3-panel">
 		<h2><b>J. W. International</b></h2>
 		<p>API design, create, maintain, opertation.</p>
+    <p id="clock"></p>
+
+    <script>
+    setInterval(myTimer, 1000);
+
+    function myTimer() {
+      const d = new Date();
+      document.getElementById("clock").innerHTML = d.toLocaleTimeString();
+    }
+    </script>
+    
 	</div>
 
 
