@@ -42,6 +42,9 @@ title: JWINT
     var slideIndex = 1;
     showDivs(slideIndex);
     
+    function plueOne() {
+      showDivs(slideIndex += 1);
+    }
     function plusDivs(n) {
       showDivs(slideIndex += n);
     }
@@ -67,7 +70,7 @@ title: JWINT
     }
     
     // w3.slideshow(".mySlides", 5000);
-    setInterval(plusDivs(1), 5000);
+    setInterval(plusOne, 5000);
 
   </script>
   

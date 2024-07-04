@@ -49,15 +49,15 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
     <p id="clock">Now</p>
 
     <script>
-    myTimer();
-    setInterval(myTimer, 1000);
 
     function myTimer() {
       const d = new Date();
       document.getElementById("clock").innerHTML = d.toLocaleTimeString();
     }
+    myTimer();
+    setInterval(myTimer, 1000);
+
     </script>
-    
 	</div>
 
 
