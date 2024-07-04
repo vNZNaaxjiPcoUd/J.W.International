@@ -5,7 +5,7 @@ layout: html
 <div class="w3-row-padding" id="about">
 {% assign pp = site.news | sort_natural: "date" | reverse %}
 {% for p in pp %}
-<div class="w3-card w3-light-grey w3-hover-shadow">
+<div class="w3-card w3-light-grey w3-hover-shadow" onclick="location.href='{{p.url}}';";>
   <header class="w3-container w3-grey">
   <H4> {{ p.date | date: "%a, %b %d, %Y" }}</H4>
   </header>
