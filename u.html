@@ -21,7 +21,7 @@ body {
 <script>
     function showTime() {
       const currentDate = new Date();
-      const timestamp = currentDate.toLocaleString();
+      const timestamp = currentDate.toLocaleString('en-US');
       let labelElement = document.getElementById("labelWithHTML");
       labelElement.innerHTML = timestamp;
     }
