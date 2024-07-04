@@ -2,6 +2,7 @@
 layout: html
 ---
 <br>
+<div class="w3-row-padding" id="about">
 {% assign pp = site.news | sort_natural: "date" | reverse %}
 {% for p in pp %}
 <div class="w3-card w3-light-grey w3-hover-shadow">
@@ -16,4 +17,4 @@ layout: html
 </div>
 <br><br>
 {% endfor %}
-
+</div>
