@@ -1,0 +1,81 @@
+---
+layout: empty
+---
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en-US" }}">
+<head>
+    <meta http-equiv="refresh" content="9999">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+html,
+body {
+
+		color: rgb(120, 120, 120);
+		background-color: rgb(1, 1, 1);
+}
+</style>
+</head>
+<body onload="showTime()">
+<script>
+    function showTime() {
+      const currentDate = new Date();
+      const options = { timeZone: '+00:00', hour: '2-digit', minute: '2-digit', second: '2-digit'};
+      const timestamp = currentDate.toLocaleString('en-US', options);
+      let labelElement = document.getElementById("labelWithHTML");
+      labelElement.innerHTML = timestamp;
+    }
+
+    async function getSiteTime() {
+      const url = "https://www.jwint.net/ds";
+      try {
+        const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error(`Response status: ${response.status}`);
+        }
+
+        const json = await response.json();
+        console.log(json);
+        let labelElement = document.getElementById("siteTime");
+        labelElement.innerHTML = json['data'];
+      } catch (error) {
+        console.error(error.message);
+      }
+    }
+    async function getCodeTime() {
+      const url = "https://www.jwint.net/dc";
+      try {
+        const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error(`Response status: ${response.status}`);
+        }
+
+        const json = await response.json();
+        console.log(json);
+        let labelElement = document.getElementById("codeTime");
+        labelElement.innerHTML = json['data'];
+      } catch (error) {
+        console.error(error.message);
+      }
+    }
+    const cnt = 0;
+    function updateCnt(){
+      cnt = cnt +1;
+      let labelElement = document.getElementById("cnT");
+      labelElement.innerHTML = cnt;
+    }
+    function upPage(){
+      showTime();
+      getSiteTime();
+      getCodeTime();
+      updateCnt();
+    }
+    setInterval(upPage, 5000);
+</script>
+Now   :<label id="labelWithHTML">Initial Text</label><br>
+Site :<label id="siteTime">site time</label><br>
+Code :<label id="codeTime">code time</label><br>
+Count:<label id="cnT">count</label><br>
+</body>
+</html>
