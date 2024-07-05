@@ -4,7 +4,7 @@ layout: empty
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: "en-US" }}">
 <head>
-    <meta http-equiv="refresh" content="5">
+    <meta http-equiv="refresh" content="9999">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,8 +26,56 @@ body {
       let labelElement = document.getElementById("labelWithHTML");
       labelElement.innerHTML = timestamp;
     }
+
+    async function getSiteTime() {
+      const url = "https://www.jwint.net/sd";
+      try {
+        const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error(`Response status: ${response.status}`);
+        }
+
+        const json = await response.json();
+        console.log(json);
+        let labelElement = document.getElementById("siteTime");
+        labelElement.innerHTML = json['data'];
+      } catch (error) {
+        console.error(error.message);
+      }
+    }
+    async function getCodeTime() {
+      const url = "https://www.jwint.net/cd";
+      try {
+        const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error(`Response status: ${response.status}`);
+        }
+
+        const json = await response.json();
+        console.log(json);
+        let labelElement = document.getElementById("codeTime");
+        labelElement.innerHTML = json['data'];
+      } catch (error) {
+        console.error(error.message);
+      }
+    }
+    const cnt = 0;
+    function updateCnt(){
+      cnt = cnt +1;
+      let labelElement = document.getElementById("cnT");
+      labelElement.innerHTML = cnt;
+    }
+    function upPage(){
+      showTime();
+      getSiteTime();
+      getCodeTime();
+      updateCnt();
+    }
+    setInterval(upPage, 1000);
 </script>
-<label id="labelWithHTML">Initial Text</label>
-<p>{{ site.time | date: "%r"}}</p>
+Now:<label id="labelWithHTML">Initial Text</label><br>
+Site Update:<label id="siteTime">site time</label><br>
+Code Upload:<label id="codeTime">code time</label><br>
+Count:<label id="cnT">count</label><br>
 </body>
 </html>
