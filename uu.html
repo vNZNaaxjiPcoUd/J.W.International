@@ -77,9 +77,9 @@ Count:<label id="cnT">count</label><br>
       labelElement.innerHTML = cntt.toString();
     }
     function refreshiFrame(){
-      //document.getElementById('ifds').contentWindow.location;
-      //document.getElementById('ifdc').contentWindow.location;
-      document.getElementById('ifds').src = document.getElementById('ifds').src
+      document.getElementById('ifds').contentWindow.location.reload();
+      document.getElementById('ifdc').contentWindow.location.reload();
+      //document.getElementById('ifds').src = document.getElementById('ifds').src
     }
     
     function upPage0(){
