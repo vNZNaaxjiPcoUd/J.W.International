@@ -21,9 +21,9 @@ Site :<label id="siteTime">site time</label><br>
 Code :<label id="codeTime">code time</label><br>
 Count:<label id="cnT">count</label><br>
 
-<iframe id="ifds" src="https://www.jwint.net/ds" width="40%" height="100" >3
+<iframe id="ifds" src="/ds.html" width="40%" height="100" >3
 </iframe>
-<iframe id="ifdc"  src="https://www.jwint.net/dc" width="40%" height="100" >4
+<iframe id="ifdc"  src="/dc.html" width="40%" height="100" >4
 </iframe>
 
 <script>
@@ -35,8 +35,8 @@ Count:<label id="cnT">count</label><br>
       labelElement.innerHTML = timestamp;
     }
 	
-    const dsurl = "https://www.jwint.net/ds";
-    const dcurl = "https://www.jwint.net/dc";
+    const dsurl = "/ds.html";
+    const dcurl = "/dc.html";
     async function getSiteTime() {
       try {
         const response = await fetch(dsurl);
@@ -77,11 +77,11 @@ Count:<label id="cnT">count</label><br>
       labelElement.innerHTML = cntt.toString();
     }
     function refreshiFrame(){
-      location.reload()
+      //location.reload()
       //document.getElementById('ifds').contentWindow.location.reload();
-      //document.getElementById('ifdc').contentWindow.location.reload();
-      //document.getElementById('ifds').src = document.getElementById('ifds').src
-      //console.log(document.getElementById('ifds').innerHTML);
+      document.getElementById('ifdc').contentWindow.location.reload();
+      document.getElementById('ifds').src = document.getElementById('ifds').src
+      console.log(document.getElementById('ifds').src);
       //console.log("33");
     }
     
