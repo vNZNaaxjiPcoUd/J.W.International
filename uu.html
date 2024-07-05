@@ -39,7 +39,7 @@ Count:<label id="cnT">count</label><br>
     const dcurl = "/dc.html";
     async function getSiteTime() {
       try {
-        const response = await fetch(dsurl);
+        const response = await fetch(dsurl,{cache:"no-cache"});
         if (!response.ok) {
           throw new Error(`Response status: ${response.status}`);
         }
@@ -56,7 +56,7 @@ Count:<label id="cnT">count</label><br>
     
     async function getCodeTime() {     
       try {
-        const response = await fetch(dcurl);
+        const response = await fetch(dcurl,{cache:"no-cache"});
         if (!response.ok) {
           throw new Error(`Response status: ${response.status}`);
         }
