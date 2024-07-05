@@ -74,21 +74,17 @@ Count:<label id="cnT">count</label><br>
     
     let cntt = 0;
     function updateCnt(){
-      cntt = cntt +1;
+      cntt = cntt + 5;
       let labelElement = document.getElementById("cnT");
       labelElement.innerHTML = cntt.toString();
     }
     function refreshiFrame(){
-      //location.reload()
-      //document.getElementById('ifds').contentWindow.location.reload();
       document.getElementById('ifdc').contentWindow.location.reload();
       document.getElementById('ifds').src = document.getElementById('ifds').src
       console.log(document.getElementById('ifds').src);
-      //console.log("33");
     }
     
     function upPage0(){
-      //refreshiFrame();
       showTime();
       getSiteTime();
       getCodeTime();
@@ -96,24 +92,14 @@ Count:<label id="cnT">count</label><br>
     }
 
     function upPage(){
-      //refreshiFrame();
       showTime();
       getSiteTime();
       getCodeTime();
       updateCnt();
-      //alert("OK2");
       console.log("ok2");
     }
-    //alert("OK");
-    //var iframe = document.getElementById('ifds');
-    //alert("OK");
-    //alert(iframe);
-    //document.getElementById('ifds').src = document.getElementById('ifds').src
-    //document.getElementById('ifds').innerHTML="Hello";
-    //document.getElementById('ifds').contentWindow.location;
-    //alert("OK");
-    setInterval(upPage, 3000);
-    //alert("OK2");
+
+    setInterval(upPage, 5000);
 </script>
 
 
