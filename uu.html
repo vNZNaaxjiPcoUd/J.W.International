@@ -15,7 +15,7 @@ body {
 </style>
 </head>
 <body onload="upPage0()">
-
+Start:<label id="startT">Initial Text</label><br>
 Now_  :<label id="labelWithHTML">Initial Text</label><br>
 Site :<label id="siteTime">site time</label><br>
 Code :<label id="codeTime">code time</label><br>
@@ -36,6 +36,15 @@ Count:<label id="cnT">count</label><br>
       let labelElement = document.getElementById("labelWithHTML");
       labelElement.innerHTML = timestamp;
     }
+
+    function startTime() {
+      const currentDate = new Date();
+      const options = { timeZone: '+00:00', hour: '2-digit', minute: '2-digit', second: '2-digit'};
+      const timestamp = currentDate.toLocaleString('en-US', options);
+      let labelElement = document.getElementById("startT");
+      labelElement.innerHTML = timestamp;
+    }
+
 	
     const dsurl = "/ds.html";
     const dcurl = "/dc.html";
@@ -85,6 +94,7 @@ Count:<label id="cnT">count</label><br>
     }
     
     function upPage0(){
+      startTime();
       showTime();
       getSiteTime();
       getCodeTime();
