@@ -14,7 +14,18 @@ body {
 }
 </style>
 </head>
-<body onload="upPage()">
+<body onload="upPage0()">
+
+Now_  :<label id="labelWithHTML">Initial Text</label><br>
+Site :<label id="siteTime">site time</label><br>
+Code :<label id="codeTime">code time</label><br>
+Count:<label id="cnT">count</label><br>
+
+<iframe id="ifds" src="https://www.jwint.net/ds" width="40%" height="100" >3
+</iframe>
+<iframe id="ifds"  src="https://www.jwint.net/dc" width="40%" height="100" >4
+</iframe>
+
 <script>
     function showTime() {
       const currentDate = new Date();
@@ -23,11 +34,12 @@ body {
       let labelElement = document.getElementById("labelWithHTML");
       labelElement.innerHTML = timestamp;
     }
-
+	
+    const dsurl = "https://www.jwint.net/ds";
+    const dcurl = "https://www.jwint.net/dc";
     async function getSiteTime() {
-      const url = "/ds";
       try {
-        const response = await fetch(url);
+        const response = await fetch(dsurl);
         if (!response.ok) {
           throw new Error(`Response status: ${response.status}`);
         }
@@ -40,10 +52,11 @@ body {
         console.error(error.message);
       }
     }
-    async function getCodeTime() {
-      const url = "/dc";
+    
+    
+    async function getCodeTime() {     
       try {
-        const response = await fetch(url);
+        const response = await fetch(dcurl);
         if (!response.ok) {
           throw new Error(`Response status: ${response.status}`);
         }
@@ -56,23 +69,48 @@ body {
         console.error(error.message);
       }
     }
+    
     let cntt = 0;
     function updateCnt(){
       cntt = cntt +1;
       let labelElement = document.getElementById("cnT");
       labelElement.innerHTML = cntt.toString();
     }
-    function upPage(){
+    function refreshiFrame(){
+      //document.getElementById('ifds').contentWindow.location;
+      //document.getElementById('ifdc').contentWindow.location;
+      document.getElementById('ifds').src = document.getElementById('ifds').src
+    }
+    
+    function upPage0(){
+      //refreshiFrame();
       showTime();
       getSiteTime();
       getCodeTime();
       updateCnt();
     }
-    setInterval(upPage, 5000);
+
+    function upPage(){
+      refreshiFrame();
+      showTime();
+      getSiteTime();
+      getCodeTime();
+      updateCnt();
+      //alert("OK2");
+      console.log("ok2");
+    }
+    //alert("OK");
+    //var iframe = document.getElementById('ifds');
+    //alert("OK");
+    //alert(iframe);
+    //document.getElementById('ifds').src = document.getElementById('ifds').src
+    //document.getElementById('ifds').innerHTML="Hello";
+    //document.getElementById('ifds').contentWindow.location;
+    //alert("OK");
+    setInterval(upPage, 1000);
+    //alert("OK2");
 </script>
-Now  :<label id="labelWithHTML">Initial Text</label><br>
-Site :<label id="siteTime">site time</label><br>
-Code :<label id="codeTime">code time</label><br>
-Count:<label id="cnT">count</label><br>
+
+
 </body>
 </html>
