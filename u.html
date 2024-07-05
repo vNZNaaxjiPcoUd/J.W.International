@@ -21,14 +21,13 @@ body {
 <script>
     function showTime() {
       const currentDate = new Date();
-      const options = { timeZone: '+00:00', hour: 'numeric', minute: 'numeric', second: 'numeric'};
+      const options = { timeZone: '+00:00', hour: '2-digit', minute: '2-digit', second: '2-digit'};
       const timestamp = currentDate.toLocaleString('en-US', options);
       let labelElement = document.getElementById("labelWithHTML");
       labelElement.innerHTML = timestamp;
     }
 </script>
 <label id="labelWithHTML">Initial Text</label>
-	H+4 <br>
 <p>{{ site.time | date: "%r"}}</p>
 </body>
 </html>
