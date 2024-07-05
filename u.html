@@ -21,7 +21,7 @@ body {
 <script>
     function showTime() {
       const currentDate = new Date.now();
-      const options = { hour: 'short', minute: 'short', second: 'short' };
+      const options = { timeZone: '+04:00', hour: 'numeric', minute: 'numeric', second: 'numeric'};
       const timestamp = currentDate.toLocaleString('en-US', options);
       let labelElement = document.getElementById("labelWithHTML");
       labelElement.innerHTML = timestamp;
@@ -29,6 +29,6 @@ body {
 </script>
 <label id="labelWithHTML">Initial Text</label>
 	H+4 <br>
-<p>{{ site.time | date: "%T"}}</p>
+<p>{{ site.time | date: "%r"}}</p>
 </body>
 </html>
