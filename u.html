@@ -20,14 +20,15 @@ body {
 <body onload="showTime()">
 <script>
     function showTime() {
-      const currentDate = new Date();
-      const timestamp = currentDate.toLocaleString('en-US');
+      const currentDate = new Date.now();
+      const options = { hour: 'short', minute: 'short', second: 'short' };
+      const timestamp = currentDate.toLocaleString('en-US', options);
       let labelElement = document.getElementById("labelWithHTML");
       labelElement.innerHTML = timestamp;
     }
 </script>
 <label id="labelWithHTML">Initial Text</label>
 	H+4 <br>
-<p>{{ site.time }}</p>
+<p>{{ site.time | date: "%T"}}</p>
 </body>
 </html>
