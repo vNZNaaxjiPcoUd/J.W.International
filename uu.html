@@ -18,7 +18,6 @@ body {
 Nows  :<label id="labelWithHTML">Initial Text</label><br>
 Start:<label id="startT">Initial Text</label><br>
 Site :<label id="siteTime">site time</label><br>
-Code :<label id="codeTime">code time</label><br>
 Count:<label id="cnT">0</label><br>
 
 
@@ -97,14 +96,14 @@ Count:<label id="cnT">0</label><br>
       startTime();
       showTime();
       getSiteTime();
-      getCodeTime();
+      //getCodeTime();
     }
 
     function upPage(){
       showTime();
       if( !(cntt % 5)){
         getSiteTime();
-        getCodeTime();
+        //getCodeTime();
       }
       updateCnt();
       //console.log("cntt");
